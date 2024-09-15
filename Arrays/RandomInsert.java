@@ -25,7 +25,7 @@ nums       index     target
 
 
 TC : O(n^2)
-SC : O(1)
+SC : O(n)
 
 
 Approach: Using first loop for ccessing the values of array num and index. Using the other loop for shifting the terms of ans array to the right for
