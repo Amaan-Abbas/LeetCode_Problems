@@ -37,11 +37,4 @@ public class MatchRule {
         }
         return j;
     }
-
-    public static void main(String[] args) {
-        
-        List<List<String>> items = new List<List<String>>() {
-            // ("phone", "blue", "pixel"), ("computer", "silver", "phone")
-        };
-    }
 }
