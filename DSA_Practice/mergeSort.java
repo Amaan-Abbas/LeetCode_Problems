@@ -1,5 +1,3 @@
-package DSA_Practice;
-
 import java.util.Arrays;
 public class mergeSort {
     public static void divide(int[] array, int start, int end) {
