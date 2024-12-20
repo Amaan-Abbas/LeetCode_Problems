@@ -74,9 +74,9 @@ public class PredictTheWinner486 {
         int[] nums = {1, 3, 5, 11, 4};
 
         if (Winner(nums)) {
-            System.out.println("Player 1 won");
+            System.out.println("Player 1 won!");
         } else {
-            System.out.println("Player 2 won");
+            System.out.println("Player 2 won!");
         }
     }
 }
