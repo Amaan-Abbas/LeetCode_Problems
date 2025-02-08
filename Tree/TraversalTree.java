@@ -1,5 +1,8 @@
 package Tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 class Node{
     int data;
     Node left, right;
@@ -32,23 +35,35 @@ public class TraversalTree {
         System.out.println(node.data + " ");
     }
 
+    static void levelOrderDFS(Node root) {
+        if (root == null) return;
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            Node node = queue.poll();
+            System.out.println(node.data + " ");
+            if (node.left != null) queue.add(node.left);
+            if (node.right != null) queue.add(node.right);
+        }
+    }
+
     public static void main(String[] args) {
         Node root = new Node(2);
         root.left = new Node(3);
         root.right = new Node(4);
         root.left.left = new Node(5);
 
-        System.out.print("In-Order tarversal: ");
+        System.out.println("In-Order tarversal: ");
         inOrderDFS(root);
 
-        System.out.println();
-
-        System.out.print("Pre-Order traversal: ");
+        System.out.println("Pre-Order traversal: ");
         preOrderDFS(root);
 
-        System.out.println();
-
-        System.out.print("Post-Order traversal: ");
+        System.out.println("Post-Order traversal: ");
         postOrderDFS(root);
+
+        System.out.println("Level-Order traversal: ");
+        levelOrderDFS(root);
     }
 }
