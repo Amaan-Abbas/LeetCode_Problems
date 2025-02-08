@@ -17,6 +17,7 @@ public class twoSum {
     //     }
     //     return false;
     // }
+    //  time complexity = O(n^2)
 
     public static boolean find(int[] ar, int target) {
         int start = 0, end = ar.length - 1;
@@ -33,6 +34,7 @@ public class twoSum {
 
         return false;
     }
+    //time complexity = O(n)
 
     public static void main(String[] args) {
         int[] arr = {10, 20, 35, 50};
