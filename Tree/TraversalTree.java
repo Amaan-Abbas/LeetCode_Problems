@@ -35,7 +35,7 @@ public class TraversalTree {
         System.out.println(node.data + " ");
     }
 
-    static void levelOrderDFS(Node root) {
+    static void levelOrderBFS(Node root) {
         if (root == null) return;
         Queue<Node> queue = new LinkedList<>();
         queue.add(root);
@@ -64,6 +64,6 @@ public class TraversalTree {
         postOrderDFS(root);
 
         System.out.println("Level-Order traversal: ");
-        levelOrderDFS(root);
+        levelOrderBFS(root);
     }
 }
