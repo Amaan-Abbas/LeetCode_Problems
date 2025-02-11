@@ -57,13 +57,13 @@ public class TraversalTree {
         System.out.println("In-Order tarversal: ");
         inOrderDFS(root);
 
-        System.out.println("Pre-Order traversal: ");
+        System.out.println("\nPre-Order traversal: ");
         preOrderDFS(root);
 
-        System.out.println("Post-Order traversal: ");
+        System.out.println("\nPost-Order traversal: ");
         postOrderDFS(root);
 
-        System.out.println("Level-Order traversal: ");
+        System.out.println("\nLevel-Order traversal: ");
         levelOrderBFS(root);
     }
 }
