@@ -84,6 +84,7 @@ public class LinkedListReverse {
         // LLR.insert(4);
         // LLR.insert(5);
 
+        //reverseBetween won't work for the below data unless you take the function as a returning function.
         LLR.insert(5);
         LLR.insert(3);
 
