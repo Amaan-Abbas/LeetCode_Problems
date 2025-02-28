@@ -35,7 +35,7 @@ public class LinkedListReverse {
     public void reverse() {
         Node current = head;
         Node previous = null;
-        Node next = null;
+        Node next;
 
         while (current != null) {
             next = current.next;
@@ -46,15 +46,52 @@ public class LinkedListReverse {
         head = previous;
     }
 
+    public void reverseBetween(int left, int right) {
+        // if (head == null) return head;
+
+        Node dummy = new Node(0);
+        dummy.next = head;
+
+        Node preNode = dummy;
+        Node currentNode = head;
+
+        for(int i = 1; i < left; i++) {
+            preNode = preNode.next;
+            currentNode = currentNode.next;
+        }
+
+        Node subHeadNode = currentNode;
+
+        Node previous = null;
+
+        for (int i = 1; i <= right - left + 1; i++){
+            Node nextNode = currentNode.next;
+            currentNode.next = previous;
+            previous = currentNode;
+            currentNode = nextNode;
+        }
+
+        preNode.next = previous;
+        subHeadNode.next = currentNode;
+        
+    }
+
     public static void main(String[] args) {
         LinkedListReverse LLR = new LinkedListReverse();
-        LLR.insert(1);
-        LLR.insert(2);
-        LLR.insert(3);
-        LLR.insert(4);
-        LLR.insert(5);
+        // LLR.insert(1);
+        // LLR.insert(2);
+        // LLR.insert(3);
+        // LLR.insert(4);
+        // LLR.insert(5);
 
-        LLR.reverse();
+        LLR.insert(5);
+        LLR.insert(3);
+
+        // LLR.reverse();
+
+        // LLR.display();
+        
+        LLR.reverseBetween(2, 4);
 
         LLR.display();
     }
