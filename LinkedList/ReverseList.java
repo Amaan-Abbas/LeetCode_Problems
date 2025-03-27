@@ -47,6 +47,10 @@ public class ReverseList {
             pointer1 = pointer2.next;
             pointer2 = preMiddle.next;
         }
+
+        if (pointer1 == preMiddle && pointer2 != null) {
+            pointer1.next = pointer2;
+        }
     }
 
     public void insertNode(int data) {
