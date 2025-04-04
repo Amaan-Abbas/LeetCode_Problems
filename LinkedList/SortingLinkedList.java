@@ -8,7 +8,7 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
+class SortingLinkedList {
 
     //Function to split singally linked list into two halves
     public static ListNode split(ListNode head) {
@@ -31,22 +31,22 @@ class Solution {
 
     //Function to merge two sorted singly Linked Lists
     public static ListNode merge (ListNode first, ListNode second) {
+        ListNode dummy = new ListNode(0);
+        ListNode tail = dummy;
 
-        //If either list is empty return the other list
-        if (first == null) return second;
-        if (second == null) return first;
-
-        if (first.val < second.val) {
-
-            //Recursively merge the reest of the lists and link the result to the current node
-            first.next = merge(first.next, second);
-            return first;
-        } else {
-
-            //Recursively merge the reest of the lists and link the result to the current node
-            second.next = merge(first, second.next);
-            return second;
+        while (first != null && second != null) {
+            if (first.val < second.val) {
+                tail.next = first;
+                first = first.next;
+            } else {
+                tail.next = second;
+                second = second.next;
+            }
+            tail = tail.next;
         }
+
+        tail.next = (first != null) ? first : second;
+        return dummy.next;
     }
 
     //Function to perform merge sort on the singly linked list
